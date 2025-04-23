@@ -1,0 +1,21 @@
+#Towny Flags Config
+flags:
+  town-height: 64
+  nation-height: 80
+  
+  #Town and Nation Flag Toggle
+  enable-town: true
+  enable-nation: true
+
+  #Default flag from flags folder
+  default-town-flag: ""
+  default-nation-flag: ""
+
+  #Roles That Can Change The Town or Nation Flag
+  town-allowed-roles:
+    - mayor
+    - assistant
+
+  nation-allowed-roles:
+    - king
+    - assistant

@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.4'
+}
+
+group = 'com.psmountains'
+version = '1.0.0'
+
+repositories repositories {
+    mavenCentral()
+    maven { url 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url 'https://repo.glaremasters.me/repository/towny/' }
+    maven { url 'https://repo.codemc.io/repository/maven-releases/' }
+    maven { url 'https://jitpack.io' }
+	maven { url = "https://repo.mikeprimm.com/" }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
+
+    compileOnly 'com.palmergames.bukkit.towny:towny:0.101.1.0'
+    compileOnly 'us.dynmap:DynmapCoreAPI:3.7-beta-6'
+    compileOnly 'com.github.TownyAdvanced:Dynmap-Towny:1.2.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+}
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
