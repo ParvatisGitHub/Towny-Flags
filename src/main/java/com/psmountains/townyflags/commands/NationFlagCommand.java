@@ -1,5 +1,3 @@
-// NationFlagCommand.java with added permission checks for preview/view/list
-
 package com.psmountains.townyflags.commands;
 
 import com.palmergames.bukkit.towny.TownyAPI;
