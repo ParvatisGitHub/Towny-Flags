@@ -14,6 +14,11 @@ public class FlagReloadCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!sender.hasPermission("townyflags.admin.reload")) {
+            sender.sendMessage("§cYou do not have permission to reload the config.");
+            return true;
+        }
+
         plugin.reloadConfig();
         plugin.copyFlagsToDynmapWebDir();
         plugin.refreshDynmapMarkers();

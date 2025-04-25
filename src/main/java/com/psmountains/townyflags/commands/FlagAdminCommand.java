@@ -19,6 +19,11 @@ public class FlagAdminCommand implements CommandExecutor, TabCompleter {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		if (!sender.hasPermission("townyflags.admin.flag")) {
+			sender.sendMessage("§cYou do not have permission to use this command.");
+			return true;
+		}
+
 		if (args.length < 3) {
 			sender.sendMessage("§cUsage:");
 			sender.sendMessage("§c/ta flag set <town|nation> <name> <image>");
