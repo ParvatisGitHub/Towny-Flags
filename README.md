@@ -1,5 +1,5 @@
 # Towny-Flags
-Adds the ability for nations and towns to choose a flag that shows on webmaps
+Adds the ability for nations and towns to choose a flag that shows on webmaps and town status screens
 `*****************************************************************************`<br/>
 `**      //\\                                                               **`<br/>
 `**      \\//                                                               **`<br/>
