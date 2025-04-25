@@ -13,6 +13,9 @@ repositories repositories {
     maven { url 'https://repo.codemc.io/repository/maven-releases/' }
     maven { url 'https://jitpack.io' }
 	maven { url = "https://repo.mikeprimm.com/" }
+	maven { url 'https://mvnrepository.com/artifact/net.kyori/adventure-text-minimessage' }
+	maven { url 'https://mvnrepository.com/artifact/net.kyori/adventure-api' }
+	maven { url 'https://mvnrepository.com/artifact/net.kyori/adventure-text-serializer-legacy' }	
 }
 
 dependencies {
@@ -22,7 +25,12 @@ dependencies {
     compileOnly 'us.dynmap:DynmapCoreAPI:3.7-beta-6'
     compileOnly 'com.github.TownyAdvanced:Dynmap-Towny:1.2.0'
 
+    implementation 'net.kyori:adventure-api:4.20.0'
+    implementation 'net.kyori:adventure-text-serializer-legacy:4.20.0'
+    implementation 'net.kyori:adventure-text-minimessage:4.20.0'
+
     compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 java {
     toolchain {
