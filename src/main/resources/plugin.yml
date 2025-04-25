@@ -1,6 +1,40 @@
 name: TownyFlags
 main: com.psmountains.townyflags.TownyFlags
-version: 1.0
+version: 2.0
 api-version: 1.20
-depend: [Towny, dynmap]
-softdepend: [dynmap-towny]
+depend: [Towny]
+softdepend: [dynmap, dynmap-towny]
+permissions:
+  townyflags.town.flag.set:
+    description: Allows a player with the right town roles to set their town flag.
+    default: false
+  townyflags.town.flag.remove:
+    description: Allows a player with the right town roles to remove their town flag.
+    default: false
+  townyflags.town.flag.view:
+    description: Allows a player to view their town flag.
+    default: true
+  townyflags.town.flag.preview:
+    description: Allows a player to preview flag images.
+    default: true
+  townyflags.nation.flag.set:
+    description: Allows a player with the right nation roles to set their nation flag.
+    default: false
+  townyflags.nation.flag.remove:
+    description: Allows a player with the right nation roles to remove their nation flag.
+    default: false
+  townyflags.nation.flag.view:
+    description: Allows a player to view their nation flag.
+    default: true
+  townyflags.nation.flag.preview:
+    description: Allows a player to preview flag images.
+    default: true
+  townyflags.admin.flag.set:
+    description: Allows a user to set flags via /ta.
+    default: op
+  townyflags.admin.flag.remove:
+    description: Allows a user to remove flags via /ta.
+    default: op
+  townyflags.admin.reload:
+    description: Allows a user to reload the flag config.
+    default: op
