@@ -1,11 +1,11 @@
 package com.psmountains.townyflags.listeners;
 
-import com.palmergames.adventure.text.Component;
+import net.kyori.adventure.text.Component;
 import com.palmergames.bukkit.towny.event.statusscreen.NationStatusScreenEvent;
 import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.utils.TownyComponents;
-import com.palmergames.adventure.text.event.HoverEvent;
-import com.palmergames.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.event.ClickEvent;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
@@ -42,8 +42,8 @@ public class NationFlagStatusListener implements Listener {
 		String titleBar = centerText(" Nation Flag ", 30, '─');
 		hoverText.append(titleBar).append("<newline>");
 
-		List<net.kyori.adventure.text.Component> previewLines = AsciiFlagView.generatePreviewRGB(flagFile, 24, 8);
-		for (net.kyori.adventure.text.Component line : previewLines) {
+		List<Component> previewLines = AsciiFlagView.generatePreviewRGB(flagFile, 24, 8);
+		for (Component line : previewLines) {
 			String lineString = mini.serialize(line);
 			hoverText.append(lineString).append("<newline>");
 		}
@@ -55,7 +55,7 @@ public class NationFlagStatusListener implements Listener {
 		event.getStatusScreen().addComponentOf(
 			"TownyFlags",
 			"&7[&aNation Flag&7]",
-			HoverEvent.showText(TownyComponents.miniMessage(hoverText.toString())),
+			HoverEvent.showText(mini.deserialize(hoverText.toString())),
 			ClickEvent.runCommand("/n flag view")
 		);
 
