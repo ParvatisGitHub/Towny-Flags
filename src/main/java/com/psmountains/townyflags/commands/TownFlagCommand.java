@@ -62,6 +62,7 @@ public class TownFlagCommand implements CommandExecutor, TabCompleter {
                 }
 
                 FlagStorage.setTownFlag(town, imageName);
+                plugin.copyFlagsToWebDir();
                 p.sendMessage("§aTown flag set to " + imageName + ".png");
                 return true;
             }
@@ -79,6 +80,7 @@ public class TownFlagCommand implements CommandExecutor, TabCompleter {
                 }
 
                 FlagStorage.removeTownFlag(town);
+                plugin.copyFlagsToWebDir();
                 p.sendMessage("§aTown flag removed.");
                 return true;
             }

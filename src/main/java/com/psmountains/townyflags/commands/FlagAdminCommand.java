@@ -55,6 +55,7 @@ public class FlagAdminCommand implements CommandExecutor, TabCompleter {
 						return true;
 					}
 					FlagStorage.setTownFlag(town, image);
+					plugin.copyFlagsToWebDir();
 					sender.sendMessage("§aFlag for town §e" + name + "§a set to §e" + image + ".png");
 				} else if (type.equals("nation")) {
 					Nation nation = TownyAPI.getInstance().getNation(name);
@@ -63,6 +64,7 @@ public class FlagAdminCommand implements CommandExecutor, TabCompleter {
 						return true;
 					}
 					FlagStorage.setNationFlag(nation, image);
+					plugin.copyFlagsToWebDir();
 					sender.sendMessage("§aFlag for nation §e" + name + "§a set to §e" + image + ".png");
 				} else {
 					sender.sendMessage("§cType must be 'town' or 'nation'");
@@ -76,6 +78,7 @@ public class FlagAdminCommand implements CommandExecutor, TabCompleter {
 						return true;
 					}
 					FlagStorage.removeTownFlag(town);
+					plugin.copyFlagsToWebDir();
 					sender.sendMessage("§aFlag removed for town §e" + name);
 				} else if (type.equals("nation")) {
 					Nation nation = TownyAPI.getInstance().getNation(name);
@@ -84,6 +87,7 @@ public class FlagAdminCommand implements CommandExecutor, TabCompleter {
 						return true;
 					}
 					FlagStorage.removeNationFlag(nation);
+					plugin.copyFlagsToWebDir();
 					sender.sendMessage("§aFlag removed for nation §e" + name);
 				} else {
 					sender.sendMessage("§cType must be 'town' or 'nation'");

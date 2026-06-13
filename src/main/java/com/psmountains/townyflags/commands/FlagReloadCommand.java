@@ -1,7 +1,6 @@
 package com.psmountains.townyflags.commands;
 
 import com.psmountains.townyflags.TownyFlags;
-import com.psmountains.townyflags.FlagStorage;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,8 +19,8 @@ public class FlagReloadCommand implements CommandExecutor {
         }
 
         plugin.reloadConfig();
-        plugin.copyFlagsToDynmapWebDir();
-        plugin.refreshDynmapMarkers();
+        plugin.copyFlagsToWebDir();
+        plugin.refreshMapTownyMarkers();
         sender.sendMessage("§aFlag config reloaded.");
         return true;
     }

@@ -1,3 +1,5 @@
+// NationFlagCommand.java with added permission checks for preview/view/list
+
 package com.psmountains.townyflags.commands;
 
 import com.palmergames.bukkit.towny.TownyAPI;
@@ -62,6 +64,7 @@ public class NationFlagCommand implements CommandExecutor, TabCompleter {
                 }
 
                 FlagStorage.setNationFlag(nation, imageName);
+                plugin.copyFlagsToWebDir();
                 p.sendMessage("§aNation flag set to " + imageName + ".png");
                 return true;
             }
@@ -79,6 +82,7 @@ public class NationFlagCommand implements CommandExecutor, TabCompleter {
                 }
 
                 FlagStorage.removeNationFlag(nation);
+                plugin.copyFlagsToWebDir();
                 p.sendMessage("§aNation flag removed.");
                 return true;
             }
